@@ -1,2 +1,1 @@
-#wavファイル分割プログラム
-wav形式の音声ファイルを等分割まだは無音ポイントを認知して分割する機能を実装
+A wav file spliter by python which can split an audio file at slience point automatically.
