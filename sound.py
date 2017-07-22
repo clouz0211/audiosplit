@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-import matplotlib.pyplot as plt
 import wave
-import sys
 import os
 import argparse
 
@@ -113,7 +111,7 @@ class Audio:
 			w.setnchannels(self.channels)
 			w.setsampwidth(self.sampwidth)
 			w.setframerate(self.rframe)
-			w.writeframes(audio_data[start:end])
+			w.writeframes(audio_data[int(start):int(end)])
 			start = end 
 			w.close()
 			count = count+1	
