@@ -79,13 +79,13 @@ class Audio:
             end = offset +	 int(count*size + (count_silence+1)*silence_size)
             # end = start + (count_silence+1)*silence_size
 
-            if not self.is_split(y[start+silence_size/2: ], size):
+            if not self.is_split(y[int(start+silence_size/2): ], size):
                 break
 
-            z = np.absolute(y[start:end])
+            z = np.absolute(y[int(start):int(end)])
 
             if self.is_silence(z):
-                if self.is_split(y[start+end/2: ], size):
+                if self.is_split(y[int(start+end/2): ], size):
                     segment_points.append(start+end/2)
                     count = count + 1
                     count_silence = 0
